@@ -2,7 +2,7 @@ import express from 'express'
 import cookieparser from 'cookie-parser'
 import cors from 'cors'
 
-const app = express();
+export const app = express();
 
 app.use(express.json);
 app.use(cookieparser());
@@ -16,10 +16,5 @@ app.use(cors({
 
 app.get("/", (req, res) => {
     res.send("Job Microservice is Working")
-})
-
-app.listen(process.env.PORT || 8000, () => {
-    console.log(`Server Is Running On Port : 8000`);
-    console.log(`Server URL : http://localhost:8000`);
 })
 
